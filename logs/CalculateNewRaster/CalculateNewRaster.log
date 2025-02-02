@@ -1,0 +1,14 @@
+tools.TOOL_CalculateNewRaster - INFO - Starting: 2025-02-01 18:46:40.841608
+tools.TOOL_CalculateNewRaster - INFO - Run by: TEDSMITH
+tools.TOOL_CalculateNewRaster - INFO - Run on: 01/02/2025, 18:46:40
+tools.TOOL_CalculateNewRaster - INFO - Base Raster Path: C:\Users\tedsmith\OneDrive - HDR, Inc\Documents\Projects\Boise\HabitatSuitability\DATA\GDB\Scratch.gdb\Test_Raster
+tools.TOOL_CalculateNewRaster - INFO - Output Raster Path: C:\Users\tedsmith\OneDrive - HDR, Inc\Documents\Projects\Boise\HabitatSuitability\DATA\GDB\Scratch.gdb\OutPut_Raster_MWFs
+tools.TOOL_CalculateNewRaster - INFO - Depth Lookup Table Path: C:\Users\tedsmith\OneDrive - HDR, Inc\Documents\Projects\Boise\HabitatSuitability\DATA\GDB\Inputs_1.gdb\DepthLU
+tools.TOOL_CalculateNewRaster - INFO - Fish Stage: MWFs
+tools.TOOL_CalculateNewRaster - INFO - Starting: 2025-02-01 18:48:46.477335
+tools.TOOL_CalculateNewRaster - INFO - Run by: TEDSMITH
+tools.TOOL_CalculateNewRaster - INFO - Run on: 01/02/2025, 18:48:46
+tools.TOOL_CalculateNewRaster - INFO - Base Raster Path: C:\Users\tedsmith\OneDrive - HDR, Inc\Documents\Projects\Boise\HabitatSuitability\DATA\GDB\Scratch.gdb\Test_Raster
+tools.TOOL_CalculateNewRaster - INFO - Output Raster Path: C:\Users\tedsmith\OneDrive - HDR, Inc\Documents\Projects\Boise\HabitatSuitability\DATA\GDB\Scratch.gdb\OutPut_Raster_MWFs
+tools.TOOL_CalculateNewRaster - INFO - Depth Lookup Table Path: C:\Users\tedsmith\OneDrive - HDR, Inc\Documents\Projects\Boise\HabitatSuitability\DATA\GDB\Inputs_1.gdb\DepthLU
+tools.TOOL_CalculateNewRaster - INFO - Fish Stage: MWFs
