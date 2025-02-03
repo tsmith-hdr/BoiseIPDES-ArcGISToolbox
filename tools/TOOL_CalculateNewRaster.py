@@ -13,7 +13,7 @@ sys.path.append(Path(__file__).resolve().parents[1])
 from constants.values import ROOT_DIR
 ################################################################################################################################################################################################################################################################################################################################################
 ## Environments
-run_debug_mode = True
+run_debug_mode = False
 arcpy.env.overwriteOutput = True
 ################################################################################################################################################################################################################################################################################################################################################
 ## Logging ## Don't Change
@@ -99,13 +99,13 @@ def main(base_raster_path:Path, output_raster_path:Path, depth_lookup_table_path
                                             value_to_nodata=-1.0
                                             )
 
-    temp_raster.save(str(output_raster_path))
+    saved_raster = temp_raster.save(str(output_raster_path))
 
     del temp_raster
 
     logger.info(f"Defining Spatial Reference...")
 
-    arcpy.management.DefineProjection(str(output_raster_path), spatial_reference)
+    #arcpy.management.DefineProjection(str(output_raster_path), spatial_reference)
 
     logger.info(f"Finished: {datetime.datetime.now()}")
 ################################################################################################################################################################################################################################################################################################################################################
