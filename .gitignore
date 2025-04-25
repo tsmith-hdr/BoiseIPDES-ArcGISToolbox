@@ -1,0 +1,14 @@
+## Ignore logs
+logs/*
+!CalculateNewRaster/.gitkeep
+
+
+## Ignore all standalone scrips except for zipped 
+standalone/*
+!StandaloneZipped.zip
+
+
+## Ignore all __pycache
+
+__pycache__/
+*.pyc

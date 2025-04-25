@@ -13,7 +13,7 @@ sys.path.append(Path(__file__).resolve().parents[1])
 from constants.values import ROOT_DIR
 ################################################################################################################################################################################################################################################################################################################################################
 ## Environments
-run_debug_mode = False
+run_debug_mode = True
 arcpy.env.overwriteOutput = True
 ################################################################################################################################################################################################################################################################################################################################################
 ## Logging ## Don't Change
@@ -37,14 +37,24 @@ def getRangeDictionary(in_table:str, fish_stage:str)->dict:
 
 
 def getScores(x, in_dict:dict)->float:
+    """
+    Function to be used in the NumPy Array Vectorize. 
+    x is the array element
+    in_dict is the range dictionary that contains the depths and the corresponding scores
+    """
+
     if x == -1.0:
         return -1.0
     else:
         for (MinD, MaxD), value in in_dict.items():
             if float(MinD) <= x <= float(MaxD):
+                ## Value[0] is the Min Score pulled from the Depth/Velocity Lookup Table
+                ## Value[1] is the Max Score pulled from the Depth/Velocity Lookup Table
                 new_score = (((x - MinD)/(MaxD - MinD))*(value[0] - value[1]))+value[1]
 
                 logger.debug(f"X: {x}")
+                logger.debug(f"Min D: {MinD}-Max D: {MaxD}")
+                logger.debug(f"Min S: {value[0]}-Max S: {value[1]}")
                 logger.debug(f"New Score: {new_score}")
 
                 return new_score
@@ -105,7 +115,7 @@ def main(base_raster_path:Path, output_raster_path:Path, depth_lookup_table_path
 
     logger.info(f"Defining Spatial Reference...")
 
-    #arcpy.management.DefineProjection(str(output_raster_path), spatial_reference)
+    arcpy.management.DefineProjection(str(output_raster_path), spatial_reference)
 
     logger.info(f"Finished: {datetime.datetime.now()}")
 ################################################################################################################################################################################################################################################################################################################################################
