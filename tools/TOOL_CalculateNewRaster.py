@@ -50,11 +50,14 @@ def getScores(x, in_dict:dict)->float:
             if float(MinD) <= x <= float(MaxD):
                 ## Value[0] is the Min Score pulled from the Depth/Velocity Lookup Table
                 ## Value[1] is the Max Score pulled from the Depth/Velocity Lookup Table
-                new_score = (((x - MinD)/(MaxD - MinD))*(value[0] - value[1]))+value[1]
+                MinS = value[0]
+                MaxS = value[1]
+
+                new_score = (((x - MinD)/(MaxD - MinD))*(MaxS - MinS))+MinS
 
                 logger.debug(f"X: {x}")
                 logger.debug(f"Min D: {MinD}-Max D: {MaxD}")
-                logger.debug(f"Min S: {value[0]}-Max S: {value[1]}")
+                logger.debug(f"Min S: {MinS}-Max S: {MaxS}")
                 logger.debug(f"New Score: {new_score}")
 
                 return new_score
